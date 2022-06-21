@@ -1,10 +1,13 @@
 import '@/components/App/App.module.css'
-import Navbar from '@/components/Navbar'
+import { useState } from 'react'
+import QRArea from '../QRArea'
 
 const App = () => {
+  const [string, setString] = useState()
   return (
     <div className="App">
-      <Navbar />
+      <input onChange={(e) => setString(e.target.value)} />
+      <QRArea string={string} />
     </div>
   )
 }
